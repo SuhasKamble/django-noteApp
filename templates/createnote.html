@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create- Note</title>
+    <link rel="stylesheet" href="static/createnote.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+            <form action="/note" method="post">
+                {% csrf_token %}
+                <div class="inputBox">
+                    <input type="text" id="title" name='title' required>
+                    <label for="Title">Title</label>
+                </div>
+                <div class="inputBox">
+                    <input type="text" id="msg" name='msg' required>
+                    <label for="Title">Message</label>
+                </div>
+                <input type="submit" value="Create Note">
+            </form>
+        </div>
+        <div class="notes">
+            <button class="view-btn"><a href="/">
+                    <i class="fa fa-eye"></i></a></button>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/7d678829bc.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
